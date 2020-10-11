@@ -56,6 +56,25 @@
                     review__listitem[i].style.transform = 'scale(1)';
                 }
                 review__btn.style.display = 'none';
-            },1000);
+            },2000);
     })
 })();
+
+(()=>{
+    let product__heart = document.getElementsByClassName('product__heart');
+    for(let i = 0; i < product__heart.length;i++)  {
+        product__heart[i].childNodes[0].addEventListener('click', 
+        function (event) {
+            let mount = document.getElementById('navbar__heart').innerHTML;
+            if(event.currentTarget.className == 'fas fa-heart') {
+                event.currentTarget.className = 'far fa-heart';
+                document.getElementById('navbar__heart').innerHTML = parseInt(mount)-1;
+            }
+            else {
+                event.currentTarget.className = 'fas fa-heart';
+                document.getElementById('navbar__heart').innerHTML = parseInt(mount)+1;
+            }
+        }
+    )}
+})();
+

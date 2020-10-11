@@ -150,16 +150,16 @@
         }
     }
     @media screen and (max-width: 600px) {
-        .product__details {
+        &__details {
             h4 {font-size: 12.5px;}
-            span:not(:nth-of-type(2)) {font-size: 12px;}  
+            > span:not(:nth-of-type(2)) {font-size: 12px;}  
         } 
-        .product__item {
+        &__item {
             flex-basis: 48%;
             margin: 0 0 10px 0;
         }
-        .product__price {font-size: 14px;}
-        .product__add {
+        &__price {font-size: 14px;}
+        &__add {
             position: absolute;
             top: -10px;
             right: -0px;

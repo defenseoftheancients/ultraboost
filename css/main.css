@@ -912,21 +912,21 @@ main {
 }
 
 @media screen and (max-width: 600px) {
-  .product .product__details h4 {
+  .product__details h4 {
     font-size: 12.5px;
   }
-  .product .product__details span:not(:nth-of-type(2)) {
+  .product__details > span:not(:nth-of-type(2)) {
     font-size: 12px;
   }
-  .product .product__item {
+  .product__item {
     -ms-flex-preferred-size: 48%;
         flex-basis: 48%;
     margin: 0 0 10px 0;
   }
-  .product .product__price {
+  .product__price {
     font-size: 14px;
   }
-  .product .product__add {
+  .product__add {
     position: absolute;
     top: -10px;
     right: -0px;
@@ -936,7 +936,7 @@ main {
 .review {
   position: relative;
   max-width: 1153px;
-  margin: 150px auto 1000px auto;
+  margin: 150px auto 0 auto;
   padding: 0 15px;
 }
 
@@ -1145,6 +1145,106 @@ main {
   .review__listitem {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
+  }
+}
+
+.shop {
+  margin: 150px 0 1000px 0;
+  position: relative;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: url(../img/shoes/shop/shop01.jpg), rgba(0, 0, 0, 0.5);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.shop__box {
+  padding: 150px 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.shop__para {
+  margin-top: 50px;
+}
+
+.shop__para p {
+  line-height: 1.5;
+  color: white;
+  font-size: 35px;
+  font-style: italic;
+}
+
+.shop__num {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap row;
+          flex-flow: wrap row;
+}
+
+.shop__num .shop__listitem {
+  padding: 50px 0;
+}
+
+.shop__num .shop__listitem > * {
+  color: #7ed6df;
+}
+
+.shop__num .shop__listitem > h3 {
+  font-size: 60px;
+}
+
+.shop__num .shop__listitem > span {
+  font-size: 25px;
+}
+
+@media screen and (max-width: 1024px) {
+  .shop {
+    margin: 40px 0 1000px 0;
+  }
+  .shop__box {
+    padding: 50px 15px;
+  }
+  .shop__para p {
+    font-size: 25px;
+  }
+  .shop__num .shop__listitem > h3 {
+    font-size: 40px;
+  }
+  .shop__num .shop__listitem > span {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .shop__para {
+    margin-top: 0px;
+  }
+  .shop__para p {
+    font-size: 20px;
+  }
+  .shop__num {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .shop__num .shop__listitem {
+    padding: 25px 0;
   }
 }
 /*# sourceMappingURL=main.css.map */
