@@ -1,0 +1,28 @@
+@import './global-variables';
+@import './reset';
+@import './mixin';
+@import './other';
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+@import './navbar';
+@import './menu';
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 150px;
+    @media screen and (max-width: 768px) {
+        margin-top: 50px;
+    }
+}
+
+@import './banner';
+@import './intro';
+@import './product';
+@import './review';

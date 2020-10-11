@@ -1,0 +1,22 @@
+#top {
+    position: absolute;
+    top: -200px;
+    left: 0;
+}
+
+.move-to-top {
+    position: fixed;
+    right: 2%;
+    bottom: 5%;
+    color: white;
+    background-color: $primary-bg-color;
+    cursor: pointer;
+    z-index: 1;
+    @include icon(50px);
+    @media screen and (max-width: 768px) {
+        & {
+            display: none;
+        }
+    }
+}
+

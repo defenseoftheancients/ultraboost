@@ -1,0 +1,22 @@
+@mixin flex($justify, $flex-direction) {
+    display: flex;
+    justify-content: $justify;
+    flex-flow: wrap $flex-direction;
+}
+@mixin trans-normal($time) {
+    transition: all $time;
+}
+@mixin center($position, $top) {
+    position: $position;
+    left: 50%;
+    top: $top;
+    transform: translate(-50%, -$top);
+}
+@mixin icon($value) {
+    width: $value;
+    height: $value;
+    line-height: $value;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+}
