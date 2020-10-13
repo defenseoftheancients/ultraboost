@@ -1,0 +1,170 @@
+
+.product {
+    position: relative;
+    max-width: 1153px;
+    margin: 80px auto 0 auto;
+    padding: 0 15px;
+    &__intro {
+        margin-bottom: 15px;
+        > span {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        > i {
+            margin-left: 5px;
+            font-size: 20px;
+        }
+        .fa-angle-double-up {color: #00b894;}
+        .fa-angle-double-down {color: #d63031;}
+        > a {
+            color: $main-txt-color;
+            float: right;
+            @include trans-normal(0.5s);
+            &:hover {color: $three-txt-color;}
+        }
+    }
+    &__box {
+        width: 100%;
+        @include flex(space-between, row);
+    }
+
+    &__item {
+        flex-basis: 19%;
+        position: relative;
+        height: auto;
+        border: 2px solid $main-border-color;
+        @include trans-normal(0.5s);
+        &:last-of-type {
+            display: none;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+        > a {
+            color: $main-txt-color;
+            .product__img {
+                background-color: $three-bg-color;
+                height: 45%;
+                width: 90%;
+                margin: 0 auto;
+                text-align: center;
+                > img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+                
+            }
+        }
+    }
+    &__details {
+        position: relative;
+        height: 55%;
+        padding: 10px;
+        background-color: $four-bg-color;
+        display: flex;
+        flex-direction: column; 
+        .product__name {
+            flex-grow: 1;
+            h4 {
+                font-size: 15px;
+                 font-weight: 600;
+            }
+        }
+    }
+    &__info {
+        > span {
+            display: block;
+            &:not(:nth-of-type(2)) {
+                color: $four-txt-color;
+                font-weight: 500;
+                font-size: 15px;
+            }
+            &:nth-of-type(1) {
+                font-size: 18px;
+                color: $three-txt-color;
+            }
+        }
+    }
+    &__heart > i {
+        cursor: pointer;
+    }
+    &__price {
+        font-size: 18px;
+        font-weight: bold;
+        > span {
+            position: relative;
+            font-size: 15px;
+            &::after {          
+                content: '';
+                width: 10px;
+                height: 2px;
+                background: black;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 0%);
+            }
+        }
+    }
+    &__add {
+        position: absolute;
+        top: -10px;
+        right: 0px;
+        cursor: pointer;
+        > i {
+            color: white;
+            background-color: $primary-bg-color;
+            padding-right: 2px;
+            @include icon(40px);
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        &__item {
+            flex-basis: 32%;
+            margin: 0 0 20px 0;
+            &:last-of-type {display: block;}
+        }
+        &__img {height: 45%;}
+        &__details {
+            height: 55%;
+            h4 {font-size: 14px;}
+        }
+        &__info {
+            > span:nth-of-type(1) {font-size: 18px;}
+            > span:nth-of-type(3) {font-size: 14px;}
+        }
+        &__price {font-size: 16px;}  
+    }
+    @media screen and (max-width: 768px) {
+        &__item {
+            &:hover {
+                box-shadow: none;
+                transform: scale(1);
+            }
+            .product__name {flex-grow: 1;}
+        }
+        &__add {
+            position: absolute;
+            top: 200px;
+            right: 10px;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        &__details {
+            h4 {font-size: 12.5px;}
+            > span:not(:nth-of-type(2)) {font-size: 12px;}  
+        } 
+        &__item {
+            flex-basis: 48%;
+            margin: 0 0 10px 0;
+        }
+        &__price {font-size: 14px;}
+        &__add {
+            position: absolute;
+            top: -10px;
+            right: -0px;
+        }
+    }
+}
+

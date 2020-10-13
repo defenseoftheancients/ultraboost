@@ -1,0 +1,62 @@
+.shop {
+    margin: 150px 0 0px 0;
+    position: relative;    
+    width: 100%;
+    height: fit-content;
+    background: url(../img/shoes/shop/shop01.jpg), rgba(0,0,0,0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    &__box {
+        padding: 150px 15px;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+        user-select: none;
+    }
+    &__para {
+        margin-top: 50px;
+        p {
+            line-height: 1.5;
+            color: $secondary-txt-color;
+            font-size: 35px;
+            font-style: italic;
+        }
+    }
+    &__num {
+       
+        @include flex(space-around, row);
+        .shop__listitem {
+            padding: 50px 0;
+            > * {color: $three-txt-color;}
+            > h3 {
+                font-size: 60px;
+            }
+            > span {font-size: 25px;}
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        &{margin: 40px 0 0px 0;}
+        &__box {padding: 50px 15px;}
+        &__para {
+            p {font-size: 25px;}
+        }
+        &__num {
+            .shop__listitem {
+                > h3 {font-size: 40px;}
+                > span {font-size: 20px;}
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        &__para {
+            margin-top: 0px;
+            p {font-size: 20px;}
+        }
+        &__num {
+            flex-direction: column;
+            .shop__listitem {padding: 25px 0;}
+        }
+    }
+}

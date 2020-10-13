@@ -1,7 +1,7 @@
 @import './global-variables';
 @import './reset';
 @import './mixin';
-@import './other';
+@import './show/other';
 header {
     width: 100%;
     position: fixed;
@@ -9,21 +9,33 @@ header {
     z-index: 2;
 }
 
-@import './navbar';
-@import './menu';
+@import './show/navbar';
+@import './show/menu';
 
 main {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: fit-content;
     margin-top: 150px;
+    
     @media screen and (max-width: 768px) {
         margin-top: 50px;
     }
 }
 
-@import './banner';
-@import './intro';
-@import './product';
-@import './review';
-@import './shop';
+@import './show/banner';
+@import './show/intro';
+@import './show/product';
+@import './show/review';
+@import './show/shop';
+@import './show/location';
+
+footer {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+}
+@import './show/support';
+@import './show/last';
+
+@import './hidden/log';

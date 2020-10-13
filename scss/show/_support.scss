@@ -1,0 +1,65 @@
+.sup {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    border-top: 1px solid #ebebeb;
+    &__box {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 30px 15px 30px 15px;
+        > ul {
+            @include flex(space-between, row);
+        }
+    }
+    &__boxitem {
+        flex-basis: 26%;
+        > h4 {
+            color: $three-txt-color;
+            font-size: 20px;
+        }
+        &:last-of-type() {
+            flex-basis: 13%;
+            > ul {
+                @include flex(flex-start, row);
+            }
+            .sup__listitem {
+                flex-basis: 100%;
+                a:nth-of-type(1) {margin-right: 15px;}
+            }
+        }
+    }
+    &__listitem {
+        margin: 10px 0;
+        a {
+            color: black;
+            @include trans-normal(0.5s);
+           &:hover {color: $five-txt-color;}
+           > i {
+               color: white;
+               background: $primary-bg-color;
+               border: 2px solid $primary-bg-color;
+               @include trans-normal(0.5s);
+               @include icon(40px);
+               &:hover {
+                color: $three-txt-color;
+                background: white;
+               }
+           }
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        &__boxitem {
+            > h4 {font-size: 16px;}
+        }
+        &__listitem {
+            margin: 5px 0;
+            a {font-size: 13px;}
+        }
+    }
+    @media screen and (max-width: 768px) {
+        &__boxitem {
+            flex-basis: 48%;
+            &:last-of-type() {flex-basis: 48%;}  
+        }
+    }
+}

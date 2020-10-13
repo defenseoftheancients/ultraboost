@@ -1,0 +1,73 @@
+.location {
+    position: relative;
+    margin-top: 150px;
+
+    height: fit-content;
+    &__heading {
+        text-align: center;
+        margin: 0 0 50px 0;
+        > h2 { 
+            font-size: 60px;
+            font-weight: 400;
+            letter-spacing: 5px;
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                background:$primary-bg-color;
+                border-radius: 50%;
+            }
+        }
+    }
+    &__box {
+        width: 100%;
+        max-width: 1053px;
+        margin: 0 auto;
+        padding: 0 15px;
+        @include flex(center, row);
+    }
+    &__left {
+        width: 60%;
+        padding: 50px 15px;
+        ul {@include flex(center, column);}
+    }
+    &__listitem {
+        margin: 10px 0;
+        span {font-size: 16px;}
+        i {
+            margin-right: 15px;
+            font-size: 35px;
+            color: $three-txt-color;
+        }
+    }
+    &__right {
+        width: 40%;
+        img { object-fit: cover;}
+    }
+    @media screen and (max-width: 768px) {
+        &__heading {
+            > h2 { 
+                font-size: 35px;
+                &::after {
+                    width: 5px;
+                    height: 5px;
+                }
+            }
+        }
+        &__left {
+            background: url(../img/shoes/shop/shop03.jpg), rgba(0,0,0,0.6);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: multiply;
+            width: 100%;
+        }
+        &__listitem {
+            margin: 10px 0;
+            span {color: $secondary-txt-color;}
+            i {font-size: 25px;}
+        }
+        &__right {display: none;}
+    }
+}

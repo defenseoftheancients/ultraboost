@@ -1,0 +1,22 @@
+.log {
+    @include center(fixed, 50%);
+    background: $primary-bg-color;
+    border: 1px solid $primary-bg-color;
+    text-align: center;
+    &__btn {
+        button {
+            outline: none;
+            border: none;
+            background: none;
+        }
+    }
+    &__listitem {
+        a {
+            img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+        
+    }
+}

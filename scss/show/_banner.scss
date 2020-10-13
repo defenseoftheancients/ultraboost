@@ -1,0 +1,81 @@
+.banner {
+    display: none;
+    position: relative;    
+    width: 100%;
+    height: fit-content;
+    background: url(../img/other/banner.jpg), rgba(0,0,0,0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    &__box {
+        width: 100%;
+        text-align: center;
+        @include center(absolute, 30%);
+        & {
+            > h2:nth-child(1) {animation: toright 1.5s linear;}
+            > h2:nth-child(2) {animation: toleft 1.5s linear;}
+            > h2 span {
+                color: white;
+                font-weight: 500;
+                font-size: 50px;
+                user-select: none;
+                &:hover {
+                    color: $three-txt-color;
+                }
+            }
+            .banner__margin {
+                margin-right: 8px;
+            }
+            @keyframes toright {
+                0% {
+                    opacity: 0;
+                    transform: translateX(-60px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+            @keyframes toleft {
+                0% {
+                    opacity: 0;
+                    transform: translateX(60px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        & {
+            width: 100%;
+            height: 400px;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        &__box {
+            top: 50%;
+            transform: translate(-50%, -50%);
+            > h2 span {font-size: 30px;}
+        }
+    }
+    @media screen and (max-width: 768px) {
+        &__box {
+            top: 35%;
+            transform: translate(-50%, -35%);
+            > h2 span {font-size: 20px;}
+            .banner__margin {
+                margin-right: 0;
+            }
+        }
+    }
+    @media screen and (max-width: 700px) {
+        & {
+            display: block;
+        }
+    }
+    
+}
