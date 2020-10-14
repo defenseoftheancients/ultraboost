@@ -78,3 +78,24 @@
     )}
 })();
 
+(()=>{
+   let input = document.querySelectorAll('#formlogin input');
+   for(let i = 0; i < input.length;i++) {
+        input[i].addEventListener('focus', function () {
+            let span = this.nextElementSibling;
+            span.style.transform = 'translateY(-10px)'; 
+            span.style.fontSize = '12px';
+        });
+        input[i].addEventListener('focusout', function () {
+            if(this.value == "") {
+                
+                let span = this.nextElementSibling;
+                span.style.transform = 'translateY(0px)'; 
+                span.style.fontSize = '16px';
+            
+            }
+        });
+   }
+   
+})();
+
