@@ -1,0 +1,198 @@
+.navbar {
+    width: 100%;
+    background: $primary-bg-color;
+    &__box {
+        position: relative;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 20px 0;
+        align-items: center;
+        @include flex(center, row);
+        > li:nth-child(1) {flex: 0.5;}
+        > li:nth-child(2) {flex: 1;}
+    }
+    &__logo {
+        a {
+            color: $main-txt-color;
+            cursor: pointer;
+        }
+        h1 {
+            font-weight: 500;
+            font-size: 30px;
+        }
+    }
+    &__search {
+        height: 40px;
+        display: flex;
+        > input {
+            display: block;
+            width: 70%;
+            height: 100%;
+            padding: 0px 10px;
+            font-size: 18px;
+            border-right: none;
+            border-radius: 5px 0 0 5px;
+            transition: 0;
+            color: $main-txt-color;
+            border: none;
+            outline: none;
+        }
+        > input:focus {
+            z-index: 99;
+            box-shadow: inset 0 0.25rem 0.125rem 0 rgba(0,0,0,0.05);
+        }
+    }
+    &__icon > span {
+        width: 40px;
+        height: 100%;
+        line-height: 40px;
+        text-align: center;
+        background: $secondary-bg-color;
+        color: $three-txt-color;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+    &__list > i {
+        display: none;
+        font-size: 19px;
+        cursor: pointer;
+    }
+    &__listbox {display: inline-flex;}
+    &__listitem > a {
+        color: $main-txt-color;
+        margin-right: 15px;
+        @include trans-normal(0.5s);
+        &:hover {color: $secondary-txt-color;}
+    }
+    a.navbar__active {color: $secondary-txt-color;}
+    &__cart {position: relative;}
+    &__cart {
+        > i {
+            position: relative;
+            margin-left: 5px;
+            cursor: pointer;
+            @include trans-normal(0.5s);
+        }
+        > i:hover {color: $secondary-txt-color;}
+       #navbar__heart {
+            font-size: 12px;
+            position: absolute;
+            left: 50%;
+            top: 70%;
+            color: white;
+            font-weight: bold;
+            background-color: #fd79a8;
+            width: 17px;
+            height: 17px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 17px;
+            border-radius: 50%
+       }
+       #navbar__product {
+           @extend #navbar__heart;
+       }
+    }
+    @media screen and (max-width: 1900px) {
+        &__box {padding: 20px 3vw;}
+    }
+    @media screen and (max-width: 1024px) {
+        &__box {
+            > li:nth-child(1){flex: 0.6;}
+            > li:nth-child(2){flex: 1;}
+        }
+        &__logo h1 {font-size: 25px;}
+        &__search > input {
+            height: 100%;
+            width: 60%;
+            padding: 0 5px;
+            font-size: 14px;
+            border-right: none;
+            border-radius: 5px 0 0 5px;
+            &__icon > span {   
+                line-height: 35px;
+            }
+        }
+        &__listitem > a {font-size: 14px;}
+        &__cart i {margin-left: 0;}
+    }
+
+    @media screen and (max-width: 768px) {
+        &__box {
+            padding: 10px 20px;
+            > li:nth-child(1){flex: 3;}
+            > li:nth-child(2){flex: 0;}
+        }
+        &__logo {
+            @include center(absolute, 50%);
+            order: 2;
+            > h1 {font-size: 20px;} 
+        }
+        &__list {
+            order: 1;
+            flex: 5;
+            > i {
+                display: inline-block;
+            }
+            .navbar__listbox {
+                position: fixed;
+                left: -100%;
+                top: 60px;
+                width: 100%;
+                height: 100vh;
+                background: $three-bg-color;
+                text-align: center;
+                flex-flow: wrap column;
+                @include trans-normal(0.5s);
+                
+                > .navbar__listitem {
+                    @keyframes toright {
+                        0% {
+                            opacity: 0;
+                            transform: translateX(-20px);
+                        }
+                        100% {
+                            opacity: 1;
+                            transform: translateX(0px);
+                        }
+                    }
+                    @include trans-normal(0.5s);
+                    margin: 15px 0;
+                    > a {
+                        font-size: 18px;
+                        &:hover {
+                            color: $three-txt-color;
+                        }
+                    }
+                }
+            }
+            a.navbar__active {color: $three-txt-color;}
+        }
+        &__search {
+            flex: 1;
+            order: 3;
+            input {
+                display: none;
+                position: absolute;
+                top: 80%;
+                right: 18%;
+                height: 60%;
+                width: 40%;
+                font-size: 13px;
+                border-right: none;
+                border-radius: 5px;
+                transition: all 0.5s;
+                color: #000;
+                &:focus {
+                    box-shadow: 1px 3px 19px 2px rgba(130,189,191,1);
+                }
+            }
+            .navbar__icon > span {
+                background: none;
+                color: $main-txt-color;
+            }
+        }
+        &__cart {order: 4;}
+    }
+}
+
