@@ -8,7 +8,7 @@
         margin: 0 0 50px 0;
         > h2 { 
             font-size: 60px;
-            font-weight: 400;
+            font-weight: 300;
             letter-spacing: 5px;
             &::after {
                 content: '';
@@ -43,7 +43,10 @@
     }
     &__right {
         width: 40%;
-        img { object-fit: cover;}
+        img { 
+            object-fit: cover;
+            border-radius: 15px;
+        }
     }
     @media screen and (max-width: 768px) {
         &__heading {

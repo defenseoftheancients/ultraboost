@@ -1,7 +1,8 @@
 .intro {
     max-width: 1800px;
     margin: 0 auto;
-    height: fit-content;
+    height: 700px;
+    pointer-events: none;
     user-select: none;
     &__box {
         width: 100%;

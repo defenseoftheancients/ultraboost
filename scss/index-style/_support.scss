@@ -31,15 +31,22 @@
     &__listitem {
         margin: 10px 0;
         a {
+            display: inline-block;
             color: black;
             @include trans-normal(0.5s);
            &:hover {color: $five-txt-color;}
            > i {
+               display: block;
                color: white;
                background: $primary-bg-color;
                border: 2px solid $primary-bg-color;
                @include trans-normal(0.5s);
-               @include icon(40px);
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                vertical-align: middle;
+                border-radius: 50%;
+                line-height: 38px;
                &:hover {
                 color: $three-txt-color;
                 background: white;

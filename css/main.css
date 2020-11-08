@@ -327,30 +327,6 @@ header {
     transition: all 0.5s;
     margin: 15px 0;
   }
-  @-webkit-keyframes toright {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateX(-20px);
-              transform: translateX(-20px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateX(0px);
-              transform: translateX(0px);
-    }
-  }
-  @keyframes toright {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateX(-20px);
-              transform: translateX(-20px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateX(0px);
-              transform: translateX(0px);
-    }
-  }
   .navbar__list .navbar__listbox > .navbar__listitem > a {
     font-size: 18px;
   }
@@ -381,6 +357,8 @@ header {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     color: #000;
+    -webkit-box-shadow: 1px 3px 19px 2px #82bdbf;
+            box-shadow: 1px 3px 19px 2px #82bdbf;
   }
   .navbar__search input:focus {
     -webkit-box-shadow: 1px 3px 19px 2px #82bdbf;
@@ -656,9 +634,8 @@ main {
 .intro {
   max-width: 1800px;
   margin: 0 auto;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 700px;
+  pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1266,7 +1243,7 @@ main {
 
 .location__heading > h2 {
   font-size: 60px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 5px;
 }
 
@@ -1335,6 +1312,7 @@ main {
 .location__right img {
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 15px;
 }
 
 @media screen and (max-width: 768px) {
@@ -1443,6 +1421,7 @@ footer {
 }
 
 .sup__listitem a {
+  display: inline-block;
   color: black;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -1453,6 +1432,7 @@ footer {
 }
 
 .sup__listitem a > i {
+  display: block;
   color: white;
   background: #7ed6df;
   border: 2px solid #7ed6df;
@@ -1460,10 +1440,10 @@ footer {
   transition: all 0.5s;
   width: 40px;
   height: 40px;
-  line-height: 40px;
   text-align: center;
   vertical-align: middle;
   border-radius: 50%;
+  line-height: 38px;
 }
 
 .sup__listitem a > i:hover {

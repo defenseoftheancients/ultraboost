@@ -1,31 +1,62 @@
 (()=>{
     let navbar__mobile = document.getElementById('navbar__mobile');
-    navbar__mobile.addEventListener('click', function () {
+    navbar__mobile.onclick =  function () {
         let navbar__listbox = document.getElementsByClassName('navbar__listbox')[0];
         let navbar__listitem = document.getElementsByClassName('navbar__listitem');
         let time = document.querySelector('.navbar__list > i');
        
-            if(navbar__listbox.style.left == '-100%') {
-                navbar__listbox.style.left = '0';
+            if(navbar__listbox.style.left == '0%') {
+                navbar__listbox.style.left = '-100%';
+                time.className = 'fas fa-bars';
+                for(let i = 0; i < navbar__listitem.length;i++) {
+                   
+                    navbar__listitem[i].style.opacity = '0';
+                }
+                
+            }
+            else {
+                navbar__listbox.style.left = '0%';
                 time.className = 'fas fa-times';
                 setTimeout(function () {
                     for(let i = 0; i < navbar__listitem.length;i++) {
-                        navbar__listitem[i].style.animation = 'toright 0.5s';
+                       
                         navbar__listitem[i].style.opacity = '1'
                     }
                 }, 500)
             }
-            else {
-                navbar__listbox.style.left = '-100%';
-                time.className = 'fas fa-bars';
-                for(let i = 0; i < navbar__listitem.length;i++) {
-                    navbar__listitem[i].style.animation = 'none';
-                    navbar__listitem[i].style.opacity = '0';
-                }
-            }
         
-    })
+    }
 
+})();
+
+(()=> {
+    let navbar__listitem = document.getElementsByClassName('navbar__listitem');
+    let search_input = document.getElementById('search-input');
+    window.onresize = function () {
+        if(window.innerWidth > 768) {
+           for(let i = 0; i < navbar__listitem.length;i++) {
+               navbar__listitem[i].style.opacity = '1';
+           }
+           search_input.style.display = "block";
+        } 
+        else {
+            search_input.style.display = "none";
+        }
+    }
+    
+})();
+
+(()=>{
+    let navbar__icon = document.getElementsByClassName('navbar__icon')[0];
+    let search_input = document.getElementById('search-input');
+    navbar__icon.onclick = function () {
+        if(search_input.style.display == "block") {
+            search_input.style.display = "none";
+        } 
+        else {
+            search_input.style.display = "block";
+        }
+    }
 })();
 
 (()=> {
